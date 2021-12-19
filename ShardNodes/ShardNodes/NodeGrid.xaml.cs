@@ -81,7 +81,10 @@ namespace ShardNodes
             n.MouseLeftButtonDown += Node_MouseLeftButtonDown;
             n.Title.Content = "Empty Node";
             n.HasInfo = false;
-            
+
+            Connector c = new Connector(SnapType.Input);
+            n.Input.Children.Add(c);
+
             AddNewNode(n);
         }
 
@@ -114,6 +117,9 @@ namespace ShardNodes
             n.Info.Content = "Logic Error";
             n.HasInfo = true;
 
+            Connector c = new Connector(SnapType.Output);
+            n.Output.Children.Add(c);
+
             AddNewNode(n);
         }
 
@@ -137,6 +143,12 @@ namespace ShardNodes
             {
                 Canvas.SetLeft(_currentNode, P.X - _currentNode.MousePosition.X);
                 Canvas.SetTop(_currentNode, P.Y - _currentNode.MousePosition.Y);
+
+                foreach (var connector in _currentNode.Input.Children)
+                {
+                    if(connector is Connector)
+                        ((Connector)connector).GetCords();
+                }
             }
         }
 
