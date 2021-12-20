@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShardNodes"
-             mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top">
+             mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" MouseEnter="Node_MouseEnter">
 
-    <Border x:Name="BorderSelected" BorderThickness="1" BorderBrush="Orange" Background="#FFFFA500" Grid.RowSpan="3" CornerRadius="10">
+    <Border x:Name="BorderSelected" BorderThickness="1" BorderBrush="Orange" Grid.RowSpan="3" CornerRadius="10">
         <Border.Effect>
             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
         </Border.Effect>
@@ -32,7 +32,7 @@
                         <GradientStop Color="#FF383663" Offset="0"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Grid x:Name="Header" IsHitTestVisible="True" MouseEnter="Header_MouseEnter" MouseLeave="Header_MouseLeave" Background="Transparent" MouseLeftButtonDown="Header_MouseLeftButtonDown">
+                <Grid x:Name="Header" IsHitTestVisible="True" MouseEnter="Header_MouseEnter" MouseLeave="Header_MouseLeave" Background="Transparent" MouseLeftButtonDown="Header_MouseLeftButtonDown" MouseMove="Header_MouseMove">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="26" MaxWidth="26" MinWidth="26"/>
                         <ColumnDefinition Width="Auto"/>

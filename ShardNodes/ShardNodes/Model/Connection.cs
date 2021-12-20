@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Shapes;
 
 namespace ShardNodes.Model
 {
@@ -11,7 +12,5 @@ namespace ShardNodes.Model
     {
         public Connector SourceConnector { get; set; }
         public Connector DestinationConnector { get; set; }
-        public Point SourceConnectorHotspot { get; set; }
-        public Point DestinationConnectorHotspot { get; set; }
     }
 }

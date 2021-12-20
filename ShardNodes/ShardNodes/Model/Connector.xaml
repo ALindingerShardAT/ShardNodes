@@ -16,13 +16,19 @@
             Grid.Column="0"
             Width="10"
             Height="10"
-            Fill="Blue" Margin="8,8,8,8"/>
+            Fill="Blue" 
+            Margin="8,8,8,8" 
+            MouseLeftButtonDown="SnapIn_MouseLeftButtonDown"
+            MouseLeftButtonUp="SnapIn_MouseLeftButtonUp"/>
         <Label Grid.Column="1" Content="Snap" Foreground="White"></Label>
         <Ellipse 
             x:Name="SnapOut"
             Grid.Column="2"
             Width="10"
             Height="10"
-            Fill="Red" Margin="8,8,8,8"/>
+            Fill="Red" 
+            Margin="8,8,8,8"
+            MouseLeftButtonDown="SnapIn_MouseLeftButtonDown"
+            MouseLeftButtonUp="SnapIn_MouseLeftButtonUp"/>
     </Grid>
 </UserControl>

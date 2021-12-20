@@ -15,8 +15,7 @@
         </Grid.ContextMenu>
         <Rectangle>
             <Rectangle.Fill>
-                <DrawingBrush Stretch="None" TileMode="Tile"
-                              Viewport="0,0 10,10" ViewportUnits="Absolute">
+                <DrawingBrush Stretch="None" TileMode="Tile" Viewport="0,0 10,10" ViewportUnits="Absolute">
                     <!-- ^^^^^^^^^^^ set the size of the tile-->
                     <DrawingBrush.Drawing>
                         <GeometryDrawing>
@@ -25,7 +24,6 @@
                                 <GeometryGroup>
                                     <!-- top-left to bottom-right -->
                                     <LineGeometry StartPoint="0,0" EndPoint="0,10" />
-
                                     <!-- bottom-left to top-right -->
                                     <LineGeometry StartPoint="0,0" EndPoint="10,0" />
                                 </GeometryGroup>
@@ -39,11 +37,15 @@
                 </DrawingBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Canvas x:Name="CanvasNodes" Background="Transparent" AllowDrop="True" DragOver="GridNodes_Drop" MouseMove="CanvasNodes_MouseMove"></Canvas>
+        <Canvas x:Name="CanvasNodes" Background="Transparent" AllowDrop="True" DragOver="GridNodes_Drop" MouseMove="CanvasNodes_MouseMove">
+           
+        </Canvas>
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">
             <StackPanel Orientation="Vertical">
                 <TextBlock x:Name="HintX" Text="X: 0"></TextBlock>
                 <TextBlock x:Name="Hinty" Text="Y: 0"></TextBlock>
+                <TextBlock x:Name="NodesC" Text="Nodes: 0"></TextBlock>
+                <TextBlock x:Name="StrokeC" Text="Strokes: 0"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>

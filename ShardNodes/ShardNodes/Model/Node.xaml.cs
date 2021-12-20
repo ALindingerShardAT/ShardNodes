@@ -76,6 +76,28 @@ namespace ShardNodes.Model
         private void Header_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MousePosition = e.GetPosition(Header);
+
+            foreach (var node in NodeGrid.nodeGrid.ActiveNetwork.Nodes)
+            {
+                node.BorderSelected.BorderBrush = (Brush)new BrushConverter().ConvertFromString("#00FFFFFF");
+            }
+
+            NodeGrid.nodeGrid.ActiveNode.BorderSelected.BorderBrush = (Brush)new BrushConverter().ConvertFromString("#FFFFA500");
+
+            NodeGrid.nodeGrid.NetworkChanged();
+        }
+
+        private void Node_MouseEnter(object sender, MouseEventArgs e)
+        {
+            NodeGrid.nodeGrid.ActiveNode = sender as Node;
+        }
+
+        private void Header_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragDrop.DoDragDrop(NodeGrid.nodeGrid, NodeGrid.nodeGrid, DragDropEffects.Move);
+            }
         }
     }
 }
